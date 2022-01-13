@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 3</title>
+    <script src="drawing.js"></script>
+</head>
+
+<body style="text-align: center;">
+    <h1>Pacmania</h1>
+    <canvas id="canvas" width="400" height="400" style="background-color: black;"></canvas>
+    <script>
+        const context = document.getElementById("canvas").getContext("2d");
+        const width = context.width;
+        const height = context.height;
+
+        context.strokeStyle = "#6200B3";
+        context.lineWidth = 0.25;
+        context.fillStyle = "#EA7AF4"
+
+        draw_grid(context, 10, 50, 'white', 'yellow');
+
+        let min_radius = 5;
+        let max_radius = 50;
+        do {
+            x_pacman = context.canvas.width * Math.random();
+            y_pacman = context.canvas.height * Math.random();
+            r_pacman = min_radius + (max_radius - min_radius) * Math.random();
+            draw_pacman(context, x_pacman, y_pacman, r_pacman, Math.random());
+            random = Math.random()
+        }
+        while (Math.random() < 0.9)
+
+
+    </script>
+</body>
+
+</html>
